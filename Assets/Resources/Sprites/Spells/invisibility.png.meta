@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: fdc5ab3dae4b39741bd0cd1410224ff6
+timeCreated: 1471003924
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: invisibility_0
+    21300002: invisibility_1
+    21300004: invisibility_2
+    21300006: invisibility_4
+    21300008: invisibility_3
+    21300010: invisibility_8
+    21300012: invisibility_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: invisibility_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 3
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: invisibility_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: invisibility_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: invisibility_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -14}
+        - {x: -14, y: -16}
+        - {x: 0, y: -16}
+        - {x: 0, y: -13}
+        - {x: -5, y: -7}
+        - {x: -14, y: -7}
+        - {x: -16, y: -9}
+      - - {x: -1, y: 2}
+        - {x: -1, y: -12}
+        - {x: 3, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 5}
+        - {x: 3, y: 5}
+      - - {x: 14, y: 16}
+        - {x: -16, y: 16}
+        - {x: -16, y: -4}
+        - {x: -14, y: -5}
+        - {x: -10, y: -5}
+        - {x: -9, y: -2}
+        - {x: 16, y: 6}
+        - {x: 16, y: 15}
+    - name: invisibility_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 4
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: invisibility_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48310077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -4.4592247}
+        - {x: -16, y: -5.4592247}
+        - {x: -16, y: -13.459225}
+        - {x: -14, y: -15.459225}
+        - {x: -6, y: -15.459225}
+        - {x: -6, y: -11.459225}
+        - {x: -13, y: -4.4592247}
+      - - {x: 9, y: -3.4592247}
+        - {x: 4, y: -6.4592247}
+        - {x: 4, y: -10.459225}
+        - {x: 9, y: -12.459225}
+        - {x: 13, y: -12.459225}
+        - {x: 16, y: -7.4592247}
+        - {x: 16, y: -5.4592247}
+        - {x: 14, y: -3.4592247}
+      - - {x: -16, y: 12.540775}
+        - {x: -16, y: 3.5407753}
+        - {x: -13, y: 3.5407753}
+        - {x: -11, y: 7.5407753}
+        - {x: -11, y: 10.540775}
+        - {x: -14, y: 12.540775}
+      - - {x: 9, y: 16.540775}
+        - {x: 9, y: 11.540775}
+        - {x: 14, y: 7.5407753}
+        - {x: 16, y: 7.5407753}
+        - {x: 16, y: 16.540775}
+      - - {x: -12, y: 16.540775}
+        - {x: -12, y: 12.540775}
+        - {x: -11, y: 10.540775}
+        - {x: -5, y: 10.540775}
+        - {x: 1, y: 13.540775}
+        - {x: 1, y: 16.540775}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

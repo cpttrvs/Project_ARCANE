@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: 9e79f0334dd6e844b8233d7588f195cb
+timeCreated: 1471403543
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rune_tp_0
+    21300002: rune_tp_1
+    21300004: rune_tp_2
+    21300006: rune_tp_3
+    21300008: rune_tp_4
+    21300010: rune_tp_5
+    21300012: rune_tp_6
+    21300014: rune_tp_8
+    21300016: rune_tp_9
+    21300018: rune_tp_10
+    21300020: rune_tp_11
+    21300022: rune_tp_12
+    21300024: rune_tp_13
+    21300026: rune_tp_14
+    21300028: rune_tp_15
+    21300030: rune_tp_16
+    21300032: rune_tp_17
+    21300034: rune_tp_18
+    21300036: rune_tp_19
+    21300038: rune_tp_20
+    21300040: rune_tp_23
+    21300042: rune_tp_35
+    21300044: rune_tp_41
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rune_tp_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 490
+        width: 60
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 23}
+        - {x: 18, y: 27}
+        - {x: 8, y: 31}
+        - {x: -17, y: 31}
+        - {x: -30, y: 28}
+        - {x: -30, y: -7}
+        - {x: -29, y: -20}
+        - {x: -20, y: -31}
+        - {x: 25, y: -31}
+        - {x: 30, y: -29}
+        - {x: 30, y: 26}
+        - {x: 26, y: 25}
+    - name: rune_tp_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 408
+        width: 76
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 36}
+        - {x: -36, y: 10}
+        - {x: -34, y: 7}
+        - {x: -32, y: 6}
+        - {x: -28, y: 6}
+        - {x: -30, y: 6}
+        - {x: -33, y: 5}
+        - {x: -32, y: -8}
+        - {x: -21, y: -35}
+        - {x: -19, y: -36}
+        - {x: 18, y: -36}
+        - {x: 30, y: -10}
+        - {x: 30, y: 19}
+        - {x: 6, y: 36}
+      - - {x: 38, y: 36}
+        - {x: 31, y: 36}
+        - {x: 24, y: 31}
+        - {x: 24, y: 12}
+        - {x: 25, y: 10}
+        - {x: 31, y: 10}
+        - {x: 35, y: 15}
+        - {x: 38, y: 27}
+      - - {x: -38, y: 36}
+        - {x: -38, y: 30}
+        - {x: -36, y: 28}
+        - {x: -31, y: 28}
+        - {x: -30, y: 30}
+        - {x: -30, y: 34}
+        - {x: -34, y: 36}
+    - name: rune_tp_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 326
+        width: 72
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31, y: 34}
+        - {x: 29, y: 33}
+        - {x: 22, y: 23}
+        - {x: 20, y: 18}
+        - {x: 20, y: 12}
+        - {x: 20, y: 20}
+        - {x: 21, y: 29}
+        - {x: 13, y: 33}
+        - {x: 10, y: 34}
+        - {x: -36, y: 34}
+        - {x: -36, y: 5}
+        - {x: -21, y: -23}
+        - {x: -7, y: -34}
+        - {x: 15, y: -34}
+        - {x: 20, y: -25}
+        - {x: 36, y: 16}
+        - {x: 36, y: 34}
+      - - {x: -20, y: 34}
+        - {x: -22, y: 32}
+        - {x: -22, y: 24}
+        - {x: -21, y: 22}
+        - {x: -18, y: 22}
+        - {x: -15, y: 23}
+        - {x: -12, y: 28}
+        - {x: -12, y: 34}
+    - name: rune_tp_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 246
+        width: 78
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 37}
+        - {x: -27, y: -31}
+        - {x: -17, y: -37}
+        - {x: 22, y: -37}
+        - {x: 29, y: -24}
+        - {x: 39, y: 10}
+        - {x: 39, y: 37}
+      - - {x: -31, y: 25}
+        - {x: -35, y: 22}
+        - {x: -35, y: 12}
+        - {x: -33, y: 11}
+        - {x: -25, y: 11}
+        - {x: -25, y: 22}
+        - {x: -29, y: 25}
+      - - {x: -39, y: 37}
+        - {x: -39, y: 24}
+        - {x: -37, y: 23}
+        - {x: -33, y: 23}
+        - {x: -31, y: 25}
+        - {x: -31, y: 33}
+        - {x: -32, y: 37}
+      - - {x: 15, y: 33}
+        - {x: 13, y: 31}
+        - {x: 13, y: 25}
+        - {x: 15, y: 23}
+        - {x: 19, y: 23}
+        - {x: 21, y: 25}
+        - {x: 21, y: 31}
+        - {x: 19, y: 33}
+      - - {x: -13, y: 35}
+        - {x: -15, y: 34}
+        - {x: -15, y: 29}
+        - {x: -14, y: 27}
+        - {x: -9, y: 27}
+        - {x: -7, y: 29}
+        - {x: -7, y: 33}
+        - {x: -9, y: 35}
+      - - {x: 23, y: 37}
+        - {x: 21, y: 35}
+        - {x: 21, y: 33}
+        - {x: 23, y: 31}
+        - {x: 27, y: 31}
+        - {x: 29, y: 33}
+        - {x: 29, y: 37}
+    - name: rune_tp_23
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 166
+        width: 76
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 30, y: 31}
+        - {x: 26, y: 31}
+        - {x: 24, y: 29}
+        - {x: 24, y: 23}
+        - {x: 23, y: 35}
+        - {x: -38, y: 35}
+        - {x: -38, y: 5}
+        - {x: -25, y: -37}
+        - {x: 21, y: -37}
+        - {x: 34, y: -8}
+        - {x: 34, y: 30}
+        - {x: 33, y: 30}
+      - - {x: -36, y: 33}
+        - {x: -38, y: 31}
+        - {x: -38, y: 25}
+        - {x: -34, y: 25}
+        - {x: -32, y: 27}
+        - {x: -32, y: 31}
+        - {x: -34, y: 33}
+      - - {x: 32, y: 31}
+        - {x: 32, y: 27}
+        - {x: 34, y: 25}
+        - {x: 36, y: 25}
+        - {x: 38, y: 27}
+        - {x: 38, y: 35}
+        - {x: 36, y: 35}
+      - - {x: -18, y: 37}
+        - {x: -18, y: 33}
+        - {x: -16, y: 31}
+        - {x: -14, y: 31}
+        - {x: -12, y: 33}
+        - {x: -12, y: 37}
+      - - {x: 24, y: 37}
+        - {x: 24, y: 35}
+        - {x: 26, y: 33}
+        - {x: 28, y: 33}
+        - {x: 30, y: 35}
+        - {x: 30, y: 37}
+    - name: rune_tp_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 86
+        width: 76
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 37}
+        - {x: -28, y: 25}
+        - {x: -28, y: -22}
+        - {x: -21, y: -37}
+        - {x: 28, y: -37}
+        - {x: 38, y: -4}
+        - {x: 38, y: 37}
+      - - {x: -36, y: 27}
+        - {x: -38, y: 26}
+        - {x: -38, y: 12}
+        - {x: -34, y: 5}
+        - {x: -26, y: 5}
+        - {x: -26, y: 22}
+        - {x: -30, y: 27}
+      - - {x: -22, y: 37}
+        - {x: -30, y: 37}
+        - {x: -30, y: 21}
+        - {x: -17, y: 21}
+        - {x: -16, y: 23}
+        - {x: -16, y: 31}
+      - - {x: 16, y: 35}
+        - {x: 12, y: 31}
+        - {x: 12, y: 27}
+        - {x: 16, y: 23}
+        - {x: 18, y: 23}
+        - {x: 22, y: 27}
+        - {x: 22, y: 33}
+        - {x: 20, y: 35}
+      - - {x: -38, y: 37}
+        - {x: -38, y: 33}
+        - {x: -36, y: 31}
+        - {x: -34, y: 31}
+        - {x: -32, y: 33}
+        - {x: -32, y: 37}
+      - - {x: -12, y: 37}
+        - {x: -12, y: 33}
+        - {x: -10, y: 31}
+        - {x: -8, y: 31}
+        - {x: -4, y: 35}
+        - {x: -4, y: 37}
+    - name: rune_tp_41
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 6
+        width: 76
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 29}
+        - {x: -18, y: 29}
+        - {x: -32, y: 21}
+        - {x: -32, y: -26}
+        - {x: -27, y: -37}
+        - {x: 18, y: -37}
+        - {x: 26, y: -22}
+        - {x: 26, y: 13}
+        - {x: 22, y: 25}
+      - - {x: -33, y: 37}
+        - {x: -38, y: 34}
+        - {x: -38, y: 17}
+        - {x: -36, y: 15}
+        - {x: -29, y: 15}
+        - {x: -20, y: 24}
+        - {x: -20, y: 31}
+        - {x: -22, y: 37}
+      - - {x: 22, y: 33}
+        - {x: 20, y: 31}
+        - {x: 20, y: 20}
+        - {x: 25, y: 17}
+        - {x: 30, y: 17}
+        - {x: 30, y: 32}
+        - {x: 28, y: 33}
+      - - {x: 10, y: 37}
+        - {x: 8, y: 35}
+        - {x: 8, y: 31}
+        - {x: 12, y: 27}
+        - {x: 14, y: 27}
+        - {x: 18, y: 31}
+        - {x: 18, y: 37}
+      - - {x: -20, y: 37}
+        - {x: -20, y: 35}
+        - {x: -14, y: 29}
+        - {x: -12, y: 29}
+        - {x: -10, y: 31}
+        - {x: -10, y: 35}
+        - {x: -12, y: 37}
+      - - {x: 30, y: 37}
+        - {x: 30, y: 33}
+        - {x: 32, y: 31}
+        - {x: 36, y: 31}
+        - {x: 38, y: 33}
+        - {x: 38, y: 37}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

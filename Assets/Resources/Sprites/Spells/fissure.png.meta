@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 1735420aea423ac4f9258384d4a8a4fd
+timeCreated: 1471455149
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: fissure_0
+    21300002: fissure_1
+    21300004: fissure_2
+    21300006: fissure_3
+    21300008: fissure_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: fissure_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 12}
+        - {x: 0, y: -21}
+        - {x: 4, y: -24}
+        - {x: 57, y: -24}
+        - {x: 62, y: -22}
+        - {x: 64, y: -20}
+        - {x: 64, y: 12}
+    - name: fissure_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 16}
+        - {x: 14, y: 8}
+        - {x: 14, y: -14}
+        - {x: 18, y: -16}
+        - {x: 36, y: -16}
+        - {x: 43, y: -15}
+        - {x: 50, y: -9}
+        - {x: 50, y: 7}
+        - {x: 47, y: 16}
+    - name: fissure_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 42, y: 14}
+        - {x: 17, y: 14}
+        - {x: 16, y: 8}
+        - {x: 16, y: -12}
+        - {x: 22, y: -18}
+        - {x: 44, y: -18}
+        - {x: 48, y: -13}
+        - {x: 48, y: 4}
+        - {x: 47, y: 9}
+    - name: fissure_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 16}
+        - {x: 18, y: 13}
+        - {x: 18, y: -13}
+        - {x: 26, y: -16}
+        - {x: 45, y: -16}
+        - {x: 50, y: -10}
+        - {x: 50, y: 13}
+        - {x: 43, y: 16}
+    - name: fissure_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 18}
+        - {x: 16, y: 12}
+        - {x: 16, y: -12}
+        - {x: 21, y: -14}
+        - {x: 46, y: -14}
+        - {x: 48, y: -7}
+        - {x: 48, y: 15}
+        - {x: 38, y: 18}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

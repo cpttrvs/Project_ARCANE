@@ -1,0 +1,134 @@
+<Project>
+  <Name>Arcane</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="460" top="390" />
+        <Size width="162" height="266" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int health</Member>
+        <Member type="Field">Mark[] state</Member>
+        <Member type="Field">int playerId</Member>
+        <Member type="Field">Spell[] spells</Member>
+        <Member type="Property">public float speed { get; set; }</Member>
+        <Member type="Method">public void move()</Member>
+        <Member type="Method">public void cast(Spell vspell)</Member>
+        <Member type="Constructor">public Player(int vhealth, int vid, float vspeed, Spell[] spells)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Category</Name>
+        <Access>Public</Access>
+        <Location left="1123" top="99" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string categoryName</Member>
+        <Member type="Field">int categoryId</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Spell</Name>
+        <Access>Public</Access>
+        <Location left="1123" top="371" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">string spellName</Member>
+        <Member type="Field">int spellId</Member>
+        <Member type="Field">Mark appliedMark</Member>
+        <Member type="Property">public float cooldown { get; set; }</Member>
+        <Member type="Property">public float size { get; set; }</Member>
+        <Member type="Property">public float range { get; set; }</Member>
+        <Member type="Property">public float velocity { get; set; }</Member>
+        <Member type="Method">public void applyMark(float duration)</Member>
+        <Member type="Constructor">public Spell(string name, int id, float cd, float size, float range, float velocity)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Mark</Name>
+        <Access>Public</Access>
+        <Location left="785" top="626" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int markId</Member>
+        <Member type="Field">float duration</Member>
+        <Member type="Constructor">public Mark(int id, float duration)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="2">
+        <Label>has</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>647</X>
+          <Y>522</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1098</X>
+          <Y>432</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>0..*</StartMultiplicity>
+        <EndMultiplicity>1..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="3">
+        <Label>applies</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1098</X>
+          <Y>558</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="3" second="0">
+        <Label>affects</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>647</X>
+          <Y>596</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>0..*</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="1">
+        <Label>isOpposedTo</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1310</X>
+          <Y>153</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>1238</X>
+          <Y>74</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="1" second="2">
+        <Label>contains</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>0..*</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

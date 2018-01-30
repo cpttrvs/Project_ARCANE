@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 9c0d684dc23e621428ecb5519a2a4c09
+timeCreated: 1471278499
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: background_green_sand_0
+    21300002: background_green_sand_1
+    21300004: background_green_sand_2
+    21300006: background_green_sand_3
+    21300008: background_green_sand_4
+    21300010: background_green_sand_5
+    21300012: background_green_sand_6
+    21300014: background_green_sand_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: background_green_sand_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4320
+        width: 2560
+        height: 1440
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 1.1875}
+        - {x: 0, y: -511.8125}
+        - {x: 910, y: -511.8125}
+        - {x: 910, y: 1.1875}
+    - name: background_green_sand_1
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 4320
+        width: 2560
+        height: 1440
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 1.1875}
+        - {x: 0, y: -511.8125}
+        - {x: 910, y: -511.8125}
+        - {x: 910, y: 1.1875}
+    - name: background_green_sand_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2880
+        width: 2560
+        height: 1440
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 1.3125}
+        - {x: 0, y: -511.6875}
+        - {x: 910, y: -511.6875}
+        - {x: 910, y: 1.3125}
+    - name: background_green_sand_3
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2880
+        width: 2560
+        height: 1440
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 1.3125}
+        - {x: 0, y: -511.6875}
+        - {x: 910, y: -511.6875}
+        - {x: 910, y: 1.3125}
+    - name: background_green_sand_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1440
+        width: 2560
+        height: 1440
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 1.4375}
+        - {x: 0, y: -511.5625}
+        - {x: 910, y: -511.5625}
+        - {x: 910, y: 1.4375}
+    - name: background_green_sand_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 1440
+        width: 2560
+        height: 1440
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 1.4375}
+        - {x: 0, y: -511.5625}
+        - {x: 910, y: -511.5625}
+        - {x: 910, y: 1.4375}
+    - name: background_green_sand_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2560
+        height: 1440
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0.0625}
+        - {x: 0, y: -511.9375}
+        - {x: 910, y: -511.9375}
+        - {x: 910, y: 0.0625}
+    - name: background_green_sand_7
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 2560
+        height: 1440
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 0.0625}
+        - {x: 0, y: -511.9375}
+        - {x: 910, y: -511.9375}
+        - {x: 910, y: 0.0625}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
