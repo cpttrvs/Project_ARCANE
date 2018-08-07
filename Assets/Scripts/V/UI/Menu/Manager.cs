@@ -31,7 +31,7 @@ public class Manager : MonoBehaviour {
 
     private GameObject currentKey; int currentPlayerKey;
 
-    private Spell[,] spellsGrid = new Spell[6, 5];
+    private Spell[,] spellsGrid = new Spell[6, 4];
     private Dictionary<string, int> currentSpell1 = new Dictionary<string, int>();
     private Dictionary<string, int> currentSpell2 = new Dictionary<string, int>();
 
@@ -425,20 +425,20 @@ public class Manager : MonoBehaviour {
 
     public void initSpellsGrid()
     {
-        spellsGrid[0, 4] = Resources.Load<GameObject>("Prefab/Spells/fireball").GetComponent<Spell>();
-        spellsGrid[1, 4] = Resources.Load<GameObject>("Prefab/Spells/lightning").GetComponent<Spell>();
-        spellsGrid[2, 4] = Resources.Load<GameObject>("Prefab/Spells/defrag").GetComponent<Spell>();
-        spellsGrid[0, 3] = Resources.Load<GameObject>("Prefab/Spells/grab").GetComponent<Spell>();
-        spellsGrid[1, 3] = Resources.Load<GameObject>("Prefab/Spells/boomerang").GetComponent<Spell>();
-        spellsGrid[2, 3] = Resources.Load<GameObject>("Prefab/Spells/guided").GetComponent<Spell>();
+        spellsGrid[0, 3] = Resources.Load<GameObject>("Prefab/Spells/fireball").GetComponent<Spell>();
+        spellsGrid[1, 3] = Resources.Load<GameObject>("Prefab/Spells/lightning").GetComponent<Spell>();
+        spellsGrid[2, 3] = Resources.Load<GameObject>("Prefab/Spells/defrag").GetComponent<Spell>();
+        spellsGrid[3, 3] = Resources.Load<GameObject>("Prefab/Spells/grab").GetComponent<Spell>();
+        spellsGrid[4, 3] = Resources.Load<GameObject>("Prefab/Spells/boomerang").GetComponent<Spell>();
+        spellsGrid[5, 3] = Resources.Load<GameObject>("Prefab/Spells/guided").GetComponent<Spell>();
 
         spellsGrid[0, 2] = Resources.Load<GameObject>("Prefab/Spells/cone").GetComponent<Spell>();
         spellsGrid[1, 2] = Resources.Load<GameObject>("Prefab/Spells/laser").GetComponent<Spell>();
-        spellsGrid[2, 2] = Resources.Load<GameObject>("Prefab/Spells/link").GetComponent<Spell>();
-
-        spellsGrid[3, 2] = Resources.Load<GameObject>("Prefab/Spells/nova").GetComponent<Spell>();
-        spellsGrid[4, 2] = Resources.Load<GameObject>("Prefab/Spells/counter").GetComponent<Spell>();
-
+        spellsGrid[2, 2] = Resources.Load<GameObject>("Prefab/Spells/fissure").GetComponent<Spell>();
+        spellsGrid[3, 2] = Resources.Load<GameObject>("Prefab/Spells/link").GetComponent<Spell>();
+        spellsGrid[4, 2] = Resources.Load<GameObject>("Prefab/Spells/nova").GetComponent<Spell>();
+        spellsGrid[5, 2] = Resources.Load<GameObject>("Prefab/Spells/counter").GetComponent<Spell>();
+        
         spellsGrid[0, 1] = Resources.Load<GameObject>("Prefab/Spells/blink").GetComponent<Spell>();
         spellsGrid[1, 1] = Resources.Load<GameObject>("Prefab/Spells/charge").GetComponent<Spell>();
         spellsGrid[2, 1] = Resources.Load<GameObject>("Prefab/Spells/teleport").GetComponent<Spell>();
@@ -447,9 +447,8 @@ public class Manager : MonoBehaviour {
         spellsGrid[5, 1] = Resources.Load<GameObject>("Prefab/Spells/invisibility").GetComponent<Spell>();
 
         spellsGrid[0, 0] = Resources.Load<GameObject>("Prefab/Spells/circle").GetComponent<Spell>();
-        spellsGrid[1, 0] = Resources.Load<GameObject>("Prefab/Spells/fissure").GetComponent<Spell>();
-        spellsGrid[2, 0] = Resources.Load<GameObject>("Prefab/Spells/meteor").GetComponent<Spell>();
-        spellsGrid[3, 0] = Resources.Load<GameObject>("Prefab/Spells/requiem").GetComponent<Spell>();
+        spellsGrid[1, 0] = Resources.Load<GameObject>("Prefab/Spells/meteor").GetComponent<Spell>();
+        spellsGrid[2, 0] = Resources.Load<GameObject>("Prefab/Spells/requiem").GetComponent<Spell>();
 
         currentSpell1.Add("x", 0); currentSpell1.Add("y", 0);
         currentSpell2.Add("x", 0); currentSpell2.Add("y", 0);
