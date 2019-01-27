@@ -7,7 +7,7 @@ using System.Linq;
 public class Player : MonoBehaviour {
     
     public int playerId;
-    public string inputPrefix;
+    public string inputPrefix = "P1_K_";
 
     
     private int health = 3;
@@ -53,8 +53,6 @@ public class Player : MonoBehaviour {
         animator.SetFloat("x", 0);
         animator.SetFloat("y", -1);
 
-        immuneIcon1 = GameObject.Find("Game").transform.Find("GameInstance").transform.Find("Player" + playerId).GetChild(0);
-        immuneIcon2 = GameObject.Find("Game").transform.Find("GameInstance").transform.Find("Player" + playerId).GetChild(1);
         
     }
 
@@ -68,8 +66,10 @@ public class Player : MonoBehaviour {
                 cast();
         }
 
-        immuneIcon1.GetComponent<SpriteRenderer>().enabled = transform.GetComponent<SpriteRenderer>().enabled;
-        immuneIcon2.GetComponent<SpriteRenderer>().enabled = transform.GetComponent<SpriteRenderer>().enabled;
+        if(immuneIcon1 != null)
+            immuneIcon1.GetComponent<SpriteRenderer>().enabled = transform.GetComponent<SpriteRenderer>().enabled;
+        if (immuneIcon2 != null)
+            immuneIcon2.GetComponent<SpriteRenderer>().enabled = transform.GetComponent<SpriteRenderer>().enabled;
        
 
         if (invulnerabilityLeft <= 0)
@@ -92,8 +92,10 @@ public class Player : MonoBehaviour {
             if(invulnerabilityLeft <= 0)
             {
                 transform.GetComponent<SpriteRenderer>().enabled = true;
-                immuneIcon1.GetComponent<SpriteRenderer>().sprite = null;
-                immuneIcon2.GetComponent<SpriteRenderer>().sprite = null;
+                if (immuneIcon1 != null)
+                    immuneIcon1.GetComponent<SpriteRenderer>().sprite = null;
+                if (immuneIcon2 != null)
+                    immuneIcon2.GetComponent<SpriteRenderer>().sprite = null;
             } 
         }
     }
@@ -317,6 +319,9 @@ public class Player : MonoBehaviour {
             new Vector3(transform.position.x, transform.position.y, s.transform.position.z),
             transform.rotation) as GameObject;
         castedSpell.GetComponent<Spell>().setCaster(this.gameObject);
+
+        
+
         return castedSpell;
     }
 
@@ -335,9 +340,13 @@ public class Player : MonoBehaviour {
                 markOne = markTwo;
                 markTwo = null;
                 currentState[0] = markOne.spellName;
-                immuneIcon1.GetComponent<SpriteRenderer>().sprite = markOne.icon;
+                if (immuneIcon1 != null)
+                    immuneIcon1.GetComponent<SpriteRenderer>().sprite = markOne.icon;
             } else
-                immuneIcon1.GetComponent<SpriteRenderer>().sprite = null;
+            {
+                if (immuneIcon1 != null)
+                    immuneIcon1.GetComponent<SpriteRenderer>().sprite = null;
+            }
         }
     }
 
@@ -349,7 +358,8 @@ public class Player : MonoBehaviour {
         {
             currentState[1] = null;
             markTwo = null;
-            immuneIcon2.GetComponent<SpriteRenderer>().sprite = null;
+            if (immuneIcon2 != null)
+                immuneIcon2.GetComponent<SpriteRenderer>().sprite = null;
         }  
     }
 
@@ -363,7 +373,8 @@ public class Player : MonoBehaviour {
                 markOne = mark;
                 currentState[0] = markOne.spellName;
 
-                immuneIcon1.GetComponent<SpriteRenderer>().sprite = markOne.icon;
+                if (immuneIcon1 != null)
+                    immuneIcon1.GetComponent<SpriteRenderer>().sprite = markOne.icon;
             }
             else if (currentState[1] == null) 
             {
@@ -373,13 +384,15 @@ public class Player : MonoBehaviour {
                     markTwo = mark;
                     currentState[1] = markTwo.spellName;
 
-                    immuneIcon2.GetComponent<SpriteRenderer>().sprite = markTwo.icon;
+                    if (immuneIcon2 != null)
+                        immuneIcon2.GetComponent<SpriteRenderer>().sprite = markTwo.icon;
                 } else if (currentState[0] != null && currentState[0] == mark.spellName) //already one mark (same spell)
                 {
                     markOne = mark;
                     currentState[0] = markOne.spellName;
 
-                    immuneIcon1.GetComponent<SpriteRenderer>().sprite = markOne.icon;
+                    if (immuneIcon1 != null)
+                        immuneIcon1.GetComponent<SpriteRenderer>().sprite = markOne.icon;
                 }
             }
 
@@ -392,8 +405,10 @@ public class Player : MonoBehaviour {
                     if (immune[i][0].spellName == currentState[0] && immune[i][1].spellName == currentState[1])
                     {
                         contains = true;
-                        immuneIcon1.GetComponent<SpriteRenderer>().sprite = null;
-                        immuneIcon2.GetComponent<SpriteRenderer>().sprite = null;
+                        if (immuneIcon1 != null)
+                            immuneIcon1.GetComponent<SpriteRenderer>().sprite = null;
+                        if (immuneIcon2 != null)
+                            immuneIcon2.GetComponent<SpriteRenderer>().sprite = null;
                     }    
                 }
 
@@ -445,6 +460,7 @@ public class Player : MonoBehaviour {
 
     public void setSpells(Spell spell1, Spell spell2, Spell spell3)
     {
+        spells = new Spell[3];
         if(spell1 != null) spells[0] = spell1;
         if (spell2 != null) spells[1] = spell2;
         if (spell3 != null) spells[2] = spell3;
@@ -484,6 +500,13 @@ public class Player : MonoBehaviour {
             spellCooldown[i] += s;
             Debug.Log(playerId + " " + spellCooldown[i]);
         }
+    }
+
+    public void setImmuneIcons(Transform icon1, Transform icon2)
+    {
+        immuneIcon1 = icon1;
+        immuneIcon2 = icon2;
+
     }
 
     public void setSpellCooldown(Spell s, float cd)

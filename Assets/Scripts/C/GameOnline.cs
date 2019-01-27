@@ -4,11 +4,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
-public class GameInstance : MonoBehaviour {
+public class GameOnline : MonoBehaviour
+{
+    public GameObject player1 = null;
+    public GameObject player2 = null;
 
-    GameObject player1 = null;
-    GameObject player2 = null;
     Transform canvas;
     Text countdownGO; bool onCountdown = true; float timeLeft = 3.5f;
     Text time;
@@ -21,23 +23,20 @@ public class GameInstance : MonoBehaviour {
 
     void Start()
     {
+        //online
+        //
+
         Time.timeScale = 0;
+
+        /*
         GameObject.Find("Canvas").transform.Find("winInterface").gameObject.SetActive(false);
-        
+
 
         player1 = GameObject.Find("Game").transform.Find("GameInstance").transform.Find("Player1").gameObject;
         player2 = GameObject.Find("Game").transform.Find("GameInstance").transform.Find("Player2").gameObject;
 
         player1.GetComponent<Player>().inputPrefix = Manager.prefix1;
         player2.GetComponent<Player>().inputPrefix = Manager.prefix2;
-
-        player1.GetComponent<Player>().setImmuneIcons(
-            GameObject.Find("Game").transform.Find("GameInstance").transform.Find("Player" + player1.GetComponent<Player>().playerId).GetChild(0),
-            GameObject.Find("Game").transform.Find("GameInstance").transform.Find("Player" + player1.GetComponent<Player>().playerId).GetChild(1));
-
-        player2.GetComponent<Player>().setImmuneIcons(
-            GameObject.Find("Game").transform.Find("GameInstance").transform.Find("Player" + player2.GetComponent<Player>().playerId).GetChild(0),
-            GameObject.Find("Game").transform.Find("GameInstance").transform.Find("Player" + player2.GetComponent<Player>().playerId).GetChild(1));
 
         canvas = GameObject.Find("Canvas").transform;
         countdownGO = canvas.Find("countdown").transform.Find("Title").transform.Find("Text").gameObject.GetComponent<Text>();
@@ -46,24 +45,54 @@ public class GameInstance : MonoBehaviour {
         player1.GetComponent<Player>().setSpells(Manager.spellsPlayer1[0], Manager.spellsPlayer1[1], Manager.spellsPlayer1[2]);
 
         player2.GetComponent<Player>().setSpells(Manager.spellsPlayer2[0], Manager.spellsPlayer2[1], Manager.spellsPlayer2[2]);
-
+        */
     }
+
     public GameObject[] getPlayers()
     { return new GameObject[2] { player1, player2 }; }
 
     public GameObject getPlayer1()
     { return player1; }
-    
+
     public GameObject getPlayer2()
     { return player2; }
 
     void Update()
     {
+        if(!isInstantiate)
+        {
+            if (player1 == null)
+            {
+                GameObject p1 = GameObject.FindGameObjectWithTag("Player");
+                player1 = p1;
+                Debug.Log("joueur 1");
+            } else
+            {
+                GameObject[] players;
+                players = GameObject.FindGameObjectsWithTag("Player");
+                foreach(GameObject g in players)
+                {
+                    if(g != player1)
+                    {
+                        player2 = g;
+                        Debug.Log("joueur 2");
+                    }
+                }
+            }
+
+            if(player1 != null && player2 != null)
+            {
+                Debug.Log("2 joueurs");
+                isInstantiate = true;
+            }
+        }
+
         Time.timeScale = 1;
-        
+
+        /*
         if (onCountdown)
             countdown();
-        
+
 
         if (player1.GetComponent<Player>().getHealth() == 0 && player2.GetComponent<Player>().getHealth() == 0)
             setWinScreen(0);
@@ -72,10 +101,11 @@ public class GameInstance : MonoBehaviour {
         if (player2.GetComponent<Player>().getHealth() == 0)
             setWinScreen(1);
 
-        if(Input.GetButtonDown("Cancel") && onPause)
+        if (Input.GetButtonDown("Cancel") && onPause)
         {
             backToGame();
-        } else if (Input.GetButtonDown("Cancel") && !onPause)
+        }
+        else if (Input.GetButtonDown("Cancel") && !onPause)
         {
             Time.timeScale = 0;
             player1.GetComponent<Player>().activate = false;
@@ -90,12 +120,13 @@ public class GameInstance : MonoBehaviour {
         }
 
         //Timer
-        if(!onPause)
+        if (!onPause)
         {
             timer += Time.deltaTime;
             time.text = timer.ToString("000");
         }
-            
+        */
+
     }
 
     void countdown()
@@ -151,7 +182,7 @@ public class GameInstance : MonoBehaviour {
         Transform title = winInterface.Find("Title");
         title.Find("Text").gameObject.GetComponent<Text>().text = "Player " + res + " WINS";
 
-        if(playerId == 0)
+        if (playerId == 0)
             title.Find("Text").gameObject.GetComponent<Text>().text = "DRAW";
 
         winInterface.gameObject.SetActive(true);
@@ -171,4 +202,5 @@ public class GameInstance : MonoBehaviour {
         Time.timeScale = 1;
         //onCountdown = true;
     }
+
 }

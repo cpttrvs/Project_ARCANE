@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class Manager : MonoBehaviour {
 
@@ -23,10 +24,12 @@ public class Manager : MonoBehaviour {
     private Transform canvas;
     private Transform mainMenu;
     private Transform fightMenu;
+    private Transform onlineMenu;
     private Transform settingsMenu;
 
     private bool onMainMenu = false;
     private bool onFightMenu = false;
+    private bool onOnlineMenu = false;
     private bool onSettingsMenu = false;
 
     private GameObject currentKey; int currentPlayerKey;
@@ -55,6 +58,7 @@ public class Manager : MonoBehaviour {
 
         mainMenu = canvas.Find("MainMenu");
         fightMenu = canvas.Find("FightMenu");
+        onlineMenu = canvas.Find("OnlineMenu");
         settingsMenu = canvas.Find("SettingsMenu");
 
         initSpellsGrid();
@@ -63,6 +67,7 @@ public class Manager : MonoBehaviour {
 
         mainMenu.gameObject.SetActive(true);
         fightMenu.gameObject.SetActive(false);
+        onlineMenu.gameObject.SetActive(false);
         settingsMenu.gameObject.SetActive(false);
         onMainMenu = true;
 
@@ -79,6 +84,25 @@ public class Manager : MonoBehaviour {
         canvas.transform.Find("background").gameObject.GetComponent<Animator>().SetTrigger("green-sand");
 
         currentButton = fightMenu.Find("Fight").gameObject.GetComponent<Button>();
+
+        selector1 = fightMenu.Find("selector1");
+        selector2 = fightMenu.Find("selector2");
+    }
+
+    public void onClick_main_Online()
+    {
+        onlineMenu.gameObject.SetActive(true);
+        mainMenu.gameObject.SetActive(false);
+        onMainMenu = false;
+        onOnlineMenu = true;
+
+        canvas.transform.Find("background").gameObject.GetComponent<Animator>().SetTrigger("green-sand");
+
+        currentButton = onlineMenu.Find("Fight").gameObject.GetComponent<Button>();
+
+        selector1 = onlineMenu.Find("selector1");
+
+        GameObject.Find("_NetworkManager").GetComponent<NetworkManagerHUD>().showGUI = true;
     }
 
     public void onClick_main_Settings()
@@ -147,6 +171,20 @@ public class Manager : MonoBehaviour {
         canvas.transform.Find("background").gameObject.GetComponent<Animator>().SetTrigger("sand-green");
 
         currentButton = mainMenu.Find("btnPlay").gameObject.GetComponent<Button>();
+    }
+
+    public void onClick_online_Back()
+    {
+        mainMenu.gameObject.SetActive(true);
+        onlineMenu.gameObject.SetActive(false);
+        onOnlineMenu = false;
+        onMainMenu = true;
+
+        canvas.transform.Find("background").gameObject.GetComponent<Animator>().SetTrigger("sand-green");
+
+        currentButton = mainMenu.Find("btnPlay").gameObject.GetComponent<Button>();
+
+        GameObject.Find("_NetworkManager").GetComponent<NetworkManagerHUD>().showGUI = false;
     }
 
     public void onClick_settings_Back()
@@ -237,133 +275,229 @@ public class Manager : MonoBehaviour {
 
             if (onFightMenu)
             {
-            
-                    //player1
-                    if (Input.GetAxisRaw(prefix1 + "Horizontal") >= 0.5f)
-                    {
-                        if (currentSpell1["x"] != spellsGrid.GetLength(0) - 1)
-                            currentSpell1["x"] ++;
-                    }
-                    if (Input.GetAxisRaw(prefix1 + "Horizontal") <= -0.5f)
-                    {
-                        if (currentSpell1["x"] != 0)
-                            currentSpell1["x"] --;
-                    }
-                    if (Input.GetAxisRaw(prefix1 + "Vertical") <= -0.5f)
-                    {
-                        if (currentSpell1["y"] != 0)
-                            currentSpell1["y"] --;
-                    }
-                    if (Input.GetAxisRaw(prefix1 + "Vertical") >= 0.5f)
-                    {
-                        if (currentSpell1["y"] != spellsGrid.GetLength(1) - 1)
-                            currentSpell1["y"] ++;
-                    }
+                //player1
+                if (Input.GetAxisRaw(prefix1 + "Horizontal") >= 0.5f)
+                {
+                    if (currentSpell1["x"] != spellsGrid.GetLength(0) - 1)
+                        currentSpell1["x"] ++;
+                }
+                if (Input.GetAxisRaw(prefix1 + "Horizontal") <= -0.5f)
+                {
+                    if (currentSpell1["x"] != 0)
+                        currentSpell1["x"] --;
+                }
+                if (Input.GetAxisRaw(prefix1 + "Vertical") <= -0.5f)
+                {
+                    if (currentSpell1["y"] != 0)
+                        currentSpell1["y"] --;
+                }
+                if (Input.GetAxisRaw(prefix1 + "Vertical") >= 0.5f)
+                {
+                    if (currentSpell1["y"] != spellsGrid.GetLength(1) - 1)
+                        currentSpell1["y"] ++;
+                }
 
 
-                    while (spellsGrid[currentSpell1["x"], currentSpell1["y"]] == null)
-                    { currentSpell1["x"]--; }
+                while (spellsGrid[currentSpell1["x"], currentSpell1["y"]] == null)
+                { currentSpell1["x"]--; }
 
-                    selector1.transform.position = fightMenu.Find("spellsGrid").transform.Find(spellsGrid[currentSpell1["x"], currentSpell1["y"]].name).transform.position;
+                selector1.transform.position = fightMenu.Find("spellsGrid").transform.Find(spellsGrid[currentSpell1["x"], currentSpell1["y"]].name).transform.position;
 
-                    if (Input.GetAxisRaw(prefix1 + "Fire1") == 1)
-                    {
-                        refreshSpell(1, 0, currentSpell1["x"], currentSpell1["y"]);
-                        Debug.Log("Player1 : spell1 = " + spellsPlayer1[0]);
-                    }
-                    if (Input.GetAxisRaw(prefix1 + "Fire2") == 1)
-                    {
-                        refreshSpell(1, 1, currentSpell1["x"], currentSpell1["y"]);
-                        Debug.Log("Player1 : spell2 = " + spellsPlayer1[1]);
-                    }
-                    if (Input.GetButton(prefix1 + "Fire3"))
-                    {
-                        refreshSpell(1, 2, currentSpell1["x"], currentSpell1["y"]);
-                        Debug.Log("Player1 : spell3 = " + spellsPlayer1[2]);
-                    }
+                if (Input.GetAxisRaw(prefix1 + "Fire1") == 1)
+                {
+                    refreshSpell(1, 0, currentSpell1["x"], currentSpell1["y"]);
+                    Debug.Log("Player1 : spell1 = " + spellsPlayer1[0]);
+                }
+                if (Input.GetAxisRaw(prefix1 + "Fire2") == 1)
+                {
+                    refreshSpell(1, 1, currentSpell1["x"], currentSpell1["y"]);
+                    Debug.Log("Player1 : spell2 = " + spellsPlayer1[1]);
+                }
+                if (Input.GetButton(prefix1 + "Fire3"))
+                {
+                    refreshSpell(1, 2, currentSpell1["x"], currentSpell1["y"]);
+                    Debug.Log("Player1 : spell3 = " + spellsPlayer1[2]);
+                }
 
-                    //player2
-                    if (Input.GetAxisRaw(prefix2 + "Horizontal") >= 0.5f)
-                    {
-                        if (currentSpell2["x"] != spellsGrid.GetLength(0) - 1)
-                            currentSpell2["x"] ++;
-                    }
-                    if (Input.GetAxisRaw(prefix2 + "Horizontal") <= -0.5f)
-                    {
-                        if (currentSpell2["x"] != 0)
-                            currentSpell2["x"] --;
-                    }
-                    if (Input.GetAxisRaw(prefix2 + "Vertical") <= -0.5f)
-                    {
-                        if (currentSpell2["y"] != 0)
-                            currentSpell2["y"] --;
-                    }
-                    if (Input.GetAxisRaw(prefix2 + "Vertical") >= 0.5f)
-                    {
-                        if (currentSpell2["y"] != spellsGrid.GetLength(1) - 1)
-                            currentSpell2["y"] ++;
-                    }
+                //player2
+                if (Input.GetAxisRaw(prefix2 + "Horizontal") >= 0.5f)
+                {
+                    if (currentSpell2["x"] != spellsGrid.GetLength(0) - 1)
+                        currentSpell2["x"] ++;
+                }
+                if (Input.GetAxisRaw(prefix2 + "Horizontal") <= -0.5f)
+                {
+                    if (currentSpell2["x"] != 0)
+                        currentSpell2["x"] --;
+                }
+                if (Input.GetAxisRaw(prefix2 + "Vertical") <= -0.5f)
+                {
+                    if (currentSpell2["y"] != 0)
+                        currentSpell2["y"] --;
+                }
+                if (Input.GetAxisRaw(prefix2 + "Vertical") >= 0.5f)
+                {
+                    if (currentSpell2["y"] != spellsGrid.GetLength(1) - 1)
+                        currentSpell2["y"] ++;
+                }
 
-                    while (spellsGrid[currentSpell2["x"], currentSpell2["y"]] == null)
-                    { currentSpell2["x"]--; }
+                while (spellsGrid[currentSpell2["x"], currentSpell2["y"]] == null)
+                { currentSpell2["x"]--; }
 
-                    selector2.transform.position = fightMenu.Find("spellsGrid").transform.Find(spellsGrid[currentSpell2["x"], currentSpell2["y"]].name).transform.position;
+                selector2.transform.position = fightMenu.Find("spellsGrid").transform.Find(spellsGrid[currentSpell2["x"], currentSpell2["y"]].name).transform.position;
                
-                    if (Input.GetAxisRaw(prefix2 + "Fire1") == 1)
-                    {
-                        refreshSpell(2, 0, currentSpell2["x"], currentSpell2["y"]);
-                        Debug.Log("Player2 : spell1 = " + spellsPlayer2[0]);
-                    }
-                    if (Input.GetAxisRaw(prefix2 + "Fire2") == 1)
-                    {
-                        refreshSpell(2, 1, currentSpell2["x"], currentSpell2["y"]);
-                        Debug.Log("Player2 : spell2 = " + spellsPlayer2[1]);
-                    }
-                    if (Input.GetButton(prefix2 + "Fire3"))
-                    {
-                        refreshSpell(2, 2, currentSpell2["x"], currentSpell2["y"]);
-                        Debug.Log("Player2 : spell3 = " + spellsPlayer2[2]);
-                    }
+                if (Input.GetAxisRaw(prefix2 + "Fire1") == 1)
+                {
+                    refreshSpell(2, 0, currentSpell2["x"], currentSpell2["y"]);
+                    Debug.Log("Player2 : spell1 = " + spellsPlayer2[0]);
+                }
+                if (Input.GetAxisRaw(prefix2 + "Fire2") == 1)
+                {
+                    refreshSpell(2, 1, currentSpell2["x"], currentSpell2["y"]);
+                    Debug.Log("Player2 : spell2 = " + spellsPlayer2[1]);
+                }
+                if (Input.GetButton(prefix2 + "Fire3"))
+                {
+                    refreshSpell(2, 2, currentSpell2["x"], currentSpell2["y"]);
+                    Debug.Log("Player2 : spell3 = " + spellsPlayer2[2]);
+                }
 
-                    //sprites
-                    for(int i = 0; i < fightMenu.Find("spellsGrid").transform.childCount; i++)
+                //sprites
+                for(int i = 0; i < fightMenu.Find("spellsGrid").transform.childCount; i++)
+                {
+                    GameObject g = fightMenu.Find("spellsGrid").transform.GetChild(i).gameObject;
+                    if (g.name == spellsGrid[currentSpell1["x"], currentSpell1["y"]].name 
+                        || g.name == spellsGrid[currentSpell2["x"], currentSpell2["y"]].name)
                     {
-                        GameObject g = fightMenu.Find("spellsGrid").transform.GetChild(i).gameObject;
-                        if (g.name == spellsGrid[currentSpell1["x"], currentSpell1["y"]].name 
-                            || g.name == spellsGrid[currentSpell2["x"], currentSpell2["y"]].name)
-                        {
-                            g.GetComponent<Button>().interactable = true;
-                            g.GetComponent<Image>().sprite = g.GetComponent<Button>().spriteState.highlightedSprite;
-                        } else
-                        {
-                            g.GetComponent<Button>().interactable = false;
-                            g.GetComponent<Image>().sprite = g.GetComponent<Button>().spriteState.disabledSprite;
-                        }
+                        g.GetComponent<Button>().interactable = true;
+                        g.GetComponent<Image>().sprite = g.GetComponent<Button>().spriteState.highlightedSprite;
+                    } else
+                    {
+                        g.GetComponent<Button>().interactable = false;
+                        g.GetComponent<Image>().sprite = g.GetComponent<Button>().spriteState.disabledSprite;
                     }
+                }
 
                     
-                fightMenu.Find("Player1").transform.Find("Description").transform.Find("Text").gameObject.GetComponent<Text>().text
-                    = spellsGrid[currentSpell1["x"], currentSpell1["y"]].spellName;
-                fightMenu.Find("Player2").transform.Find("Description").transform.Find("Text").gameObject.GetComponent<Text>().text
-                    = spellsGrid[currentSpell2["x"], currentSpell2["y"]].spellName;
+            fightMenu.Find("Player1").transform.Find("Description").transform.Find("Text").gameObject.GetComponent<Text>().text
+                = spellsGrid[currentSpell1["x"], currentSpell1["y"]].spellName;
+            fightMenu.Find("Player2").transform.Find("Description").transform.Find("Text").gameObject.GetComponent<Text>().text
+                = spellsGrid[currentSpell2["x"], currentSpell2["y"]].spellName;
 
-                //if everyone has 3 spells
-                if ((spellsPlayer1[0] != null && spellsPlayer2[0] != null) &&
-                    (spellsPlayer1[1] != null && spellsPlayer2[1] != null) &&
-                    (spellsPlayer1[2] != null && spellsPlayer2[2] != null))
+            //if everyone has 3 spells
+            if ((spellsPlayer1[0] != null && spellsPlayer2[0] != null) &&
+                (spellsPlayer1[1] != null && spellsPlayer2[1] != null) &&
+                (spellsPlayer1[2] != null && spellsPlayer2[2] != null))
+                ready = true;
+            else
+                ready = false;
+            fightMenu.transform.Find("Fight").transform.GetComponent<Button>().interactable = ready;
+
+
+            //inputs
+                
+            if (delay <= 0 && ready)
+            {
+                if (Input.GetButton("Submit"))
+                {
+                    fightMenu.Find("Fight").transform.GetComponent<Button>().Select();
+                    delay = 0.5f;
+                }
+            }
+            else
+                delay -= Time.deltaTime;
+
+            if (Input.GetButton("Cancel"))
+            {
+                Debug.Log("cancel");
+                fightMenu.Find("Back").transform.GetComponent<Button>().Select();
+            }
+                    
+            
+            }
+
+            if (onOnlineMenu)
+            {
+                //player
+                if (Input.GetAxisRaw(prefix1 + "Horizontal") >= 0.5f)
+                {
+                    if (currentSpell1["x"] != spellsGrid.GetLength(0) - 1)
+                        currentSpell1["x"]++;
+                }
+                if (Input.GetAxisRaw(prefix1 + "Horizontal") <= -0.5f)
+                {
+                    if (currentSpell1["x"] != 0)
+                        currentSpell1["x"]--;
+                }
+                if (Input.GetAxisRaw(prefix1 + "Vertical") <= -0.5f)
+                {
+                    if (currentSpell1["y"] != 0)
+                        currentSpell1["y"]--;
+                }
+                if (Input.GetAxisRaw(prefix1 + "Vertical") >= 0.5f)
+                {
+                    if (currentSpell1["y"] != spellsGrid.GetLength(1) - 1)
+                        currentSpell1["y"]++;
+                }
+
+
+                while (spellsGrid[currentSpell1["x"], currentSpell1["y"]] == null)
+                { currentSpell1["x"]--; }
+
+                selector1.transform.position = onlineMenu.Find("spellsGrid").transform.Find(spellsGrid[currentSpell1["x"], currentSpell1["y"]].name).transform.position;
+
+                if (Input.GetAxisRaw(prefix1 + "Fire1") == 1)
+                {
+                    refreshSpell(1, 0, currentSpell1["x"], currentSpell1["y"]);
+                    Debug.Log("Player1 : spell1 = " + spellsPlayer1[0]);
+                }
+                if (Input.GetAxisRaw(prefix1 + "Fire2") == 1)
+                {
+                    refreshSpell(1, 1, currentSpell1["x"], currentSpell1["y"]);
+                    Debug.Log("Player1 : spell2 = " + spellsPlayer1[1]);
+                }
+                if (Input.GetButton(prefix1 + "Fire3"))
+                {
+                    refreshSpell(1, 2, currentSpell1["x"], currentSpell1["y"]);
+                    Debug.Log("Player1 : spell3 = " + spellsPlayer1[2]);
+                }
+                
+                //sprites
+                for (int i = 0; i < onlineMenu.Find("spellsGrid").transform.childCount; i++)
+                {
+                    GameObject g = onlineMenu.Find("spellsGrid").transform.GetChild(i).gameObject;
+                    if (g.name == spellsGrid[currentSpell1["x"], currentSpell1["y"]].name
+                        || g.name == spellsGrid[currentSpell2["x"], currentSpell2["y"]].name)
+                    {
+                        g.GetComponent<Button>().interactable = true;
+                        g.GetComponent<Image>().sprite = g.GetComponent<Button>().spriteState.highlightedSprite;
+                    }
+                    else
+                    {
+                        g.GetComponent<Button>().interactable = false;
+                        g.GetComponent<Image>().sprite = g.GetComponent<Button>().spriteState.disabledSprite;
+                    }
+                }
+
+
+                onlineMenu.Find("Player1").transform.Find("Description").transform.Find("Text").gameObject.GetComponent<Text>().text
+                    = spellsGrid[currentSpell1["x"], currentSpell1["y"]].spellName;
+
+                //if player has 3 spells
+                if (spellsPlayer1[0] != null && spellsPlayer1[1] != null && spellsPlayer1[2] != null)
                     ready = true;
                 else
                     ready = false;
-                fightMenu.transform.Find("Fight").transform.GetComponent<Button>().interactable = ready;
+                onlineMenu.transform.Find("Fight").transform.GetComponent<Button>().interactable = ready;
 
 
                 //inputs
-                
+
                 if (delay <= 0 && ready)
                 {
                     if (Input.GetButton("Submit"))
                     {
-                        fightMenu.Find("Fight").transform.GetComponent<Button>().Select();
+                        onlineMenu.Find("Fight").transform.GetComponent<Button>().Select();
                         delay = 0.5f;
                     }
                 }
@@ -373,10 +507,10 @@ public class Manager : MonoBehaviour {
                 if (Input.GetButton("Cancel"))
                 {
                     Debug.Log("cancel");
-                    fightMenu.Find("Back").transform.GetComponent<Button>().Select();
+                    onlineMenu.Find("Back").transform.GetComponent<Button>().Select();
                 }
-                    
-            
+
+
             }
             gcdUi = 0.3f;
         }
@@ -452,8 +586,6 @@ public class Manager : MonoBehaviour {
 
         currentSpell1.Add("x", 0); currentSpell1.Add("y", 0);
         currentSpell2.Add("x", 0); currentSpell2.Add("y", 0);
-        selector1 = fightMenu.Find("selector1");
-        selector2 = fightMenu.Find("selector2");
 
         Debug.Log(Screen.width + " " + Screen.height);
 
@@ -470,7 +602,10 @@ public class Manager : MonoBehaviour {
         Transform spellBar = null;
         if (numPlayer == 1)
         {
-            spellBar = fightMenu.Find("Player1");
+            if (onFightMenu)
+                spellBar = fightMenu.Find("Player1");
+            if (onOnlineMenu)
+                spellBar = onlineMenu.Find("Player1");
 
             for (int i = 0; i < spellsPlayer1.Length; i++)
             {
@@ -517,11 +652,16 @@ public class Manager : MonoBehaviour {
                 icon1 = spellsPlayer1[i].icon;
             if (spellsPlayer2[i] != null)
                 icon2 = spellsPlayer2[i].icon;
+            
+            if (onFightMenu)
+            {
+                fightMenu.Find("Player1").Find("Spell" + (i + 1).ToString()).gameObject.GetComponent<Image>().overrideSprite = icon1;
 
-            fightMenu.Find("Player1").Find("Spell" + (i + 1).ToString()).gameObject.GetComponent<Image>().overrideSprite =
-                icon1;
-            fightMenu.Find("Player2").Find("Spell" + (i + 1).ToString()).gameObject.GetComponent<Image>().overrideSprite =
-                icon2;
+                fightMenu.Find("Player2").Find("Spell" + (i + 1).ToString()).gameObject.GetComponent<Image>().overrideSprite = icon2;
+            }
+
+            if (onOnlineMenu)
+                fightMenu.Find("Player1").Find("Spell" + (i + 1).ToString()).gameObject.GetComponent<Image>().overrideSprite = icon1;
         }
     }
 }
